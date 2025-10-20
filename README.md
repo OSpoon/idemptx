@@ -1,6 +1,6 @@
-# 🧹 idemptx
+# 🧹 idemptx-redis6
 
-[![PyPI - Version](https://img.shields.io/pypi/v/idemptx?color=blue)](https://pypi.org/project/idemptx/)
+[![PyPI - Version](https://img.shields.io/pypi/v/idemptx-redis6?color=blue)](https://pypi.org/project/idemptx-redis6/)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 > A minimal, pluggable idempotency decorator for FastAPI, designed for payment and retry-safe APIs.
@@ -24,7 +24,7 @@ Supports Redis as backend for deduplication, distributed locking, and response c
 ## 📦 Installation
 
 ```bash
-pip install idemptx
+pip install idemptx-redis6
 ```
 
 ---
@@ -100,7 +100,7 @@ async def create_something(request: Request):
 ## 🔐 Response Headers
 
 | Header                    | Description                            |
-|---------------------------|----------------------------------------|
+| ------------------------- | -------------------------------------- |
 | `Idempotency-Key`         | Echoed back to client                  |
 | `X-Idempotency-Signature` | Hash of request for conflict detection |
 | `X-Idempotency-Status`    | `"hit"` or `"new"`                     |
@@ -111,7 +111,7 @@ async def create_something(request: Request):
 
 Currently, only `JSONResponse` is supported for caching.
 
-If your endpoint uses `response_model`, the return value is typically a Pydantic model, which FastAPI wraps *after* the decorator has executed. This means the idempotency decorator cannot cache the final serialized response or set headers reliably in this case.
+If your endpoint uses `response_model`, the return value is typically a Pydantic model, which FastAPI wraps _after_ the decorator has executed. This means the idempotency decorator cannot cache the final serialized response or set headers reliably in this case.
 
 To enable caching, please return a `JSONResponse` explicitly from your endpoint.
 

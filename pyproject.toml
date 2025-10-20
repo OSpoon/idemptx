@@ -1,18 +1,16 @@
 [tool.poetry]
-name = "idemptx"
-version = "0.2.2"
+name = "idemptx-redis6"
+version = "0.2.3"
 description = "Idempotency decorator for FastAPI"
-authors = ["pypy-riley <pypy.riley@gmail.com>"]
+authors = ["OSpoon <zxin088@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/pypy-riley/idemptx"
-repository = "https://github.com/pypy-riley/idemptx"
-documentation = "https://github.com/pypy-riley/idemptx#readme"
+homepage = "https://github.com/OSpoon/idemptx"
+repository = "https://github.com/OSpoon/idemptx"
+documentation = "https://github.com/OSpoon/idemptx#readme"
 keywords = ["fastapi", "idempotency", "decorator", "redis", "cache"]
 
-packages = [
-  { include = "idemptx", from = "src" }
-]
+packages = [{ include = "idemptx", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
